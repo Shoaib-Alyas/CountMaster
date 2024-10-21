@@ -57,70 +57,74 @@ const Counter = () => {
     }
 
     return (
-        <div className="max-w-lg p-8 mx-auto shadow-lg rounded-3xl bg-slate-600">
-    <div className="p-6 text-center rounded-3xl bg-slate-500">
-        <h1 className="mb-6 text-4xl font-bold text-blue-700">Count: {count}</h1>
-        <div className="flex justify-center space-x-4">
-            <button
-                className="p-3 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-blue-700"
-                onClick={addCount}
-            >
-                Addition
-            </button>
-            <button
-                className="p-3 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-red-700"
-                onClick={minusCount}
-            >
-                Subtraction
-            </button>
-            <button
-                className="p-3 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-gray-700"
-                onClick={resetCount}
-            >
-                Reset
-            </button>
-        </div>
-    </div>
-    <div className="mt-8 text-center">
-        <div className="mb-4">
-            <input
-                className="w-40 p-2 text-black rounded-md bg-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                type="number"
-                value={add}
-                onChange={(e) => setAddAmount(e.target.value)}
-            />
-        </div>
-        <button
-            className="p-3 m-2 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-green-700"
-            onClick={increaseByAmount}
-        >
-            Add By Amount
-        </button>
-        <div className="mb-4">
-            <input
-                className="w-40 p-2 text-black rounded-md bg-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
-                type="number"
-                value={minus}
-                onChange={(e) => setMinusAmount(e.target.value)}
-            />
-        </div>
-        <button
-            className="p-3 m-2 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-orange-700"
-            onClick={decreaseByAmountHandler}
-        >
-            Minus By Amount
-        </button>
-        <div className="mt-4">
-            <button
-                className="p-3 m-2 text-white transition duration-300 ease-in-out bg-black rounded-full hover:bg-gray-700"
-                onClick={resetState}
-            >
-                Reset State
-            </button>
-        </div>
-    </div>
-</div>
+        <div className="flex items-center justify-center min-h-screen bg-black">
+            <div className="max-w-lg p-8 pt-20 shadow-lg bg-slate-800 rounded-3xl">
+                <div className="p-6 text-center rounded-3xl">
+                    <h1 className="mb-6 text-4xl font-bold text-white">Count: {count}</h1>
+                    <div className="flex justify-center space-x-4">
+                        <button
+                            className="p-3 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                            onClick={addCount}
+                        >
+                            + Increment
+                        </button>
+                        <button
+                            className="p-3 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                            onClick={minusCount}
+                        >
+                            - Decrement
+                        </button>
+                        <button
+                            className="p-3 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                            onClick={resetCount}
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
 
+                <div className="mt-8 space-y-6 text-center">
+                    <div>
+                        <input
+                            className="w-40 p-2 text-center text-black bg-white border-2 border-black rounded-md focus:outline-none"
+                            type="number"
+                            value={add}
+                            onChange={(e) => setAddAmount(e.target.value)}
+                            placeholder="Enter amount"
+                        />
+                        <button
+                            className="p-3 ml-4 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                            onClick={increaseByAmount}
+                        >
+                            Add By Amount
+                        </button>
+                    </div>
+
+                    <div>
+                        <input
+                            className="w-40 p-2 text-center text-black bg-white border-2 border-black rounded-md focus:outline-none"
+                            type="number"
+                            value={minus}
+                            onChange={(e) => setMinusAmount(e.target.value)}
+                            placeholder="Enter amount"
+                        />
+                        <button
+                            className="p-3 ml-4 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                            onClick={decreaseByAmountHandler}
+                        >
+                            Minus By Amount
+                        </button>
+                    </div>
+
+                    <button
+                        className="p-3 mt-4 text-white transition duration-300 ease-in-out rounded-full shadow-lg bg-slate-500 hover:bg-blue-800"
+                        onClick={resetState}
+                    >
+                        Reset State
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 };
 
